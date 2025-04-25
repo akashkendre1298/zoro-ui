@@ -75,7 +75,7 @@ const EmailForm = () => {
       type="email"
       value={email}
       setValue={setEmail}
-      validate={validateEmail}  //options validateName,validatePhone, validatePassword 
+      validate={validateEmail}
       placeholder="Enter your email"
     />
   );
@@ -132,6 +132,37 @@ const FilterDropdown = () => {
   );
 };
 ```
+
+### 🔍 SearchBar Component
+
+Real-time search filtering for datasets and tables.
+
+```jsx
+import React, { useState } from "react";
+import { SearchBar } from "zoro-ui";
+
+const App = () => {
+  const [data, setData] = useState([
+    { name: "John Doe", age: 28, city: "New York" },
+    { name: "Jane Smith", age: 34, city: "Los Angeles" },
+    { name: "Sam Wilson", age: 22, city: "Chicago" },
+  ]);
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      <SearchBar data={data} placeholder="Search users..." />
+    </div>
+  );
+};
+
+export default App;
+```
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `data` | array | Dataset that will be searched (array of objects) |
+| `placeholder` | string | Placeholder text for the search input (optional) |
+| `className` | string | Additional custom CSS classes for styling (optional) |
 
 ### 📊 Table Component
 
@@ -235,7 +266,7 @@ Zoro UI components work seamlessly with your tailwind.config.js.
 
 ```bash
 # Clone the repo
-git clone https://github.com/akashkendre1298/zoro-ui.git
+git clone https://github.com/yourusername/zoro-ui.git
 
 # Install dependencies
 cd zoro-ui
@@ -261,8 +292,8 @@ npm run build
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
-- Submit a [pull request](https://github.com/akashkendre1298/zoro-ui)
-- Report [issues](https://github.com/akashkendre1298/zoro-ui)
+- Submit a [pull request](https://github.com/yourusername/zoro-ui/pulls)
+- Report [issues](https://github.com/yourusername/zoro-ui/issues)
 - Suggest new features
 
 ## 📄 License
