@@ -266,7 +266,7 @@ Zoro UI components work seamlessly with your tailwind.config.js.
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/zoro-ui.git
+git clone https://github.com/akashkendre1298/zoro-ui-components.git
 
 # Install dependencies
 cd zoro-ui

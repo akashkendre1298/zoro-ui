@@ -38,9 +38,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/akashkendre1298/zoro-ui.git"
+    "url": "https://github.com/akashkendre1298/zoro-ui-components.git"
   },
-  "homepage": "https://github.com/akashkendre1298/zoro-ui",
+  "homepage": "https://github.com/akashkendre1298/zoro-ui-components",
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
