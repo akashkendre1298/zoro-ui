@@ -1,4 +1,4 @@
-# <img src="https://img.shields.io/badge/-Zoro_UI-5e17eb?style=for-the-badge" alt="Zoro UI Logo" /> 
+# <img src="https://img.shields.io/badge/-Zoro_UI_Components-5e17eb?style=for-the-badge" alt="Zoro UI Components Logo" /> 
 
 <div align="center">
   
@@ -7,7 +7,7 @@
   ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
   ![NPM](https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white)
   [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-  ![Downloads](https://img.shields.io/npm/dt/zoro-ui.svg)
+  ![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
 
   <h3>A lightweight, customizable React component library built with Tailwind CSS</h3>
 </div>
@@ -25,19 +25,19 @@
 
 ```bash
 # NPM
-npm install zoro-ui
+npm install zoro-ui-components
 
 # Yarn
-yarn add zoro-ui
+yarn add zoro-ui-components
 
 # PNPM
-pnpm add zoro-ui
+pnpm add zoro-ui-components
 ```
 
 ## 🚀 Quick Start
 
 ```jsx
-import { Button, InputField } from 'zoro-ui';
+import { Button, InputField } from 'zoro-ui-components';
 
 function App() {
   return (
@@ -64,7 +64,7 @@ Fully customizable input fields with built-in validation support.
 
 ```jsx
 import { useState } from "react";
-import { InputField, validateEmail } from "zoro-ui";
+import { InputField, validateEmail } from "zoro-ui-components";
 
 const EmailForm = () => {
   const [email, setEmail] = useState("");
@@ -75,7 +75,7 @@ const EmailForm = () => {
       type="email"
       value={email}
       setValue={setEmail}
-      validate={validateEmail}   //options validateName, validatePhone, validatePassword
+      validate={validateEmail}
       placeholder="Enter your email"
     />
   );
@@ -96,7 +96,7 @@ const EmailForm = () => {
 Versatile button component with various styles and states.
 
 ```jsx
-import { Button } from "zoro-ui";
+import { Button } from "zoro-ui-components";
 
 // Default button
 <Button onClick={() => console.log("Clicked!")}>
@@ -118,7 +118,7 @@ Interactive dropdown menu for selections and actions.
 
 ```jsx
 import { useState } from "react";
-import { Dropdown } from "zoro-ui";
+import { Dropdown } from "zoro-ui-components";
 
 const FilterDropdown = () => {
   const [selected, setSelected] = useState(null);
@@ -139,7 +139,7 @@ Real-time search filtering for datasets and tables.
 
 ```jsx
 import React, { useState } from "react";
-import { SearchBar } from "zoro-ui";
+import { SearchBar } from "zoro-ui-components";
 
 const App = () => {
   const [data, setData] = useState([
@@ -169,7 +169,7 @@ export default App;
 Flexible table layouts for displaying structured data.
 
 ```jsx
-import { Table } from "zoro-ui";
+import { Table } from "zoro-ui-components";
 
 const UsersTable = () => {
   const columns = ["Name", "Age", "Location"];
@@ -192,7 +192,7 @@ Collapsible sidebar navigation with smooth transitions.
 
 ```jsx
 import { useState } from "react";
-import { Sidebar } from "zoro-ui";
+import { Sidebar } from "zoro-ui-components";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -218,7 +218,7 @@ Modal dialogs and popup notifications with customizable content.
 
 ```jsx
 import { useState } from "react";
-import { Button, Popup } from "zoro-ui";
+import { Button, Popup } from "zoro-ui-components";
 
 const ConfirmationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -251,7 +251,7 @@ const ConfirmationDialog = () => {
 
 ## 🎭 Theme Customization
 
-Zoro UI components work seamlessly with your tailwind.config.js.
+Zoro UI Components work seamlessly with your tailwind.config.js.
 
 ```jsx
 // Example of customizing a Button
@@ -269,14 +269,14 @@ Zoro UI components work seamlessly with your tailwind.config.js.
 git clone https://github.com/akashkendre1298/zoro-ui-components.git
 
 # Install dependencies
-cd zoro-ui
+cd zoro-ui-components
 npm install
 
 # Start the development server
 npm run dev
 
 # Run tests
-npm test
+npm run lint
 
 # Build for production
 npm run build
@@ -284,21 +284,22 @@ npm run build
 
 ## 📝 Changelog
 
-### v1.0.0 (Latest)
-- 🎉 Initial release with core components
+### v1.0.1 (Latest)
+- 🎉 Initial public release with core components
 - 🌗 Added dark mode support
 - 🌟 Improved accessibility features
+- 🔍 Added SearchBar component
 
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
-- Submit a [pull request](https://github.com/yourusername/zoro-ui/pulls)
-- Report [issues](https://github.com/yourusername/zoro-ui/issues)
+- Submit a [pull request](https://github.com/akashkendre1298/zoro-ui)
+- Report [issues](https://github.com/akashkendre1298/zoro-ui)
 - Suggest new features
 
 ## 📄 License
 
-Zoro UI is open-source software licensed under the [MIT License](LICENSE).
+Zoro UI Components is open-source software licensed under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
@@ -308,9 +309,8 @@ Created and maintained by Akash Kendre.
 
 <div align="center">
   <p>
-    <a href="https://github.com/yourusername/zoro-ui">GitHub</a> •
-    <a href="https://www.npmjs.com/package/zoro-ui">NPM</a> •
-    <a href="https://twitter.com/yourusername">Twitter</a>
+    <a href="https://github.com/akashkendre1298/zoro-ui">GitHub</a> •
+    <a href="https://www.npmjs.com/package/zoro-ui">NPM</a>
   </p>
-  <p>⭐ Star us on GitHub if you find Zoro UI helpful! ⭐</p>
+  <p>⭐ Star us on GitHub if you find Zoro UI Components helpful! ⭐</p>
 </div>
