@@ -75,7 +75,7 @@ const EmailForm = () => {
       type="email"
       value={email}
       setValue={setEmail}
-      validate={validateEmail}
+      validate={validateEmail}   //options validateName, validatePhone, validatePassword
       placeholder="Enter your email"
     />
   );
