@@ -1,201 +1,285 @@
-# Zoro UI - React Component Library
+# <img src="https://img.shields.io/badge/-Zoro_UI-5e17eb?style=for-the-badge" alt="Zoro UI Logo" /> 
 
-Zoro UI is a lightweight, customizable React component library built with Tailwind CSS. It provides commonly used UI components like buttons, inputs, dropdowns, sidebars, modals, and more, which can be easily integrated into your React projects.
+<div align="center">
+  
+  ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+  ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+  ![NPM](https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white)
+  [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+  ![Downloads](https://img.shields.io/npm/dt/zoro-ui.svg)
 
-## Installation
+  <h3>A lightweight, customizable React component library built with Tailwind CSS</h3>
+</div>
 
-To install **Zoro UI** into your project, run:
+## ✨ Features
+
+- 🧩 Modular components for easy integration
+- 🎨 Fully customizable with Tailwind CSS
+- 🚀 Lightweight with minimal dependencies
+- 📱 Responsive design out of the box
+- 🔍 Accessibility focused
+- 🌙 Dark mode support
+
+## 📦 Installation
 
 ```bash
+# NPM
 npm install zoro-ui
-Or if you're using Yarn:
+
+# Yarn
 yarn add zoro-ui
-Getting Started
-Once you have installed the package, you can start using the components in your React project. Below is a detailed usage guide for each component.
 
-Input Component
-The Input component allows users to enter text, numbers, and other data types. It's fully customizable and can be used for forms and other user input scenarios.
+# PNPM
+pnpm add zoro-ui
+```
 
-import { useState } from "react";
-import { InputField, validateName, validateEmail, validatePhone, validatePassword } from "zoro-ui";
+## 🚀 Quick Start
 
-const FormExample = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
+```jsx
+import { Button, InputField } from 'zoro-ui';
 
-    return (
-        <div className="max-w-md mx-auto">
-            <InputField
-                label="Name"
-                type="text"
-                value={name}
-                setValue={setName}
-                validate={validateName}
-                placeholder="Enter your name"
-            />
-            <InputField
-                label="Email"
-                type="email"
-                value={email}
-                setValue={setEmail}
-                validate={validateEmail}
-                placeholder="Enter your email"
-            />
-            <InputField
-                label="Phone"
-                type="tel"
-                value={phone}
-                setValue={setPhone}
-                validate={validatePhone}
-                placeholder="Enter your phone number"
-            />
-            <InputField
-                label="Password"
-                type="password"
-                value={password}
-                setValue={setPassword}
-                validate={validatePassword}
-                placeholder="Enter a strong password"
-            />
-        </div>
-    );
-};
-
-
-Prop Name	Type	        Description
-label	    string	        The label displayed for the input field.
-type	    string      	The type of the input field (e.g., text, email, password).
-value	    string	        The current value of the input field.
-setValue	function	    A function to update the value of the input field.
-validate	function	    The validation function to check input validity (e.g., validateName).
-placeholder	string	        Placeholder text to be shown when the input is empty.
-
-import React from "react";
-import { Button } from "zoro-ui";
-
-const MyApp = () => {
+function App() {
   return (
-    <Button onClick={() => alert("Button Clicked!")}>Click Me</Button>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">My Awesome App</h1>
+      <InputField 
+        label="Email"
+        placeholder="Enter your email"
+        type="email" 
+      />
+      <Button onClick={() => alert('Hello from Zoro UI!')}>
+        Click Me
+      </Button>
+    </div>
+  );
+}
+```
+
+## 📚 Component Library
+
+### 🔤 Input Component
+
+Fully customizable input fields with built-in validation support.
+
+```jsx
+import { useState } from "react";
+import { InputField, validateEmail } from "zoro-ui";
+
+const EmailForm = () => {
+  const [email, setEmail] = useState("");
+
+  return (
+    <InputField
+      label="Email"
+      type="email"
+      value={email}
+      setValue={setEmail}
+      validate={validateEmail}
+      placeholder="Enter your email"
+    />
   );
 };
+```
 
-export default MyApp;
-Customizing the Button
+| Prop | Type | Description |
+|------|------|-------------|
+| `label` | string | The label displayed for the input field |
+| `type` | string | Input type (text, email, password, etc.) |
+| `value` | string | Current value of the input |
+| `setValue` | function | Function to update the value |
+| `validate` | function | Validation function |
+| `placeholder` | string | Placeholder text |
 
-<Button
-  onClick={() => alert("Custom Button Clicked!")}
+### 🔘 Button Component
+
+Versatile button component with various styles and states.
+
+```jsx
+import { Button } from "zoro-ui";
+
+// Default button
+<Button onClick={() => console.log("Clicked!")}>
+  Click Me
+</Button>
+
+// Custom styled button
+<Button 
+  onClick={() => console.log("Submitted!")}
   className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg"
 >
   Submit
 </Button>
-Dropdown Component
-The Dropdown component is a customizable dropdown menu that can be used for selecting values or actions.
+```
 
+### 📝 Dropdown Component
 
-import React, { useState } from "react";
+Interactive dropdown menu for selections and actions.
+
+```jsx
+import { useState } from "react";
 import { Dropdown } from "zoro-ui";
 
-const MyApp = () => {
+const FilterDropdown = () => {
   const [selected, setSelected] = useState(null);
-
-  const handleSelect = (value) => {
-    setSelected(value);
-  };
 
   return (
     <Dropdown
-      options={["Option 1", "Option 2", "Option 3"]}
-      onSelect={handleSelect}
+      options={["Latest", "Oldest", "Popular"]}
+      onSelect={setSelected}
       selected={selected}
     />
   );
 };
+```
 
-export default MyApp;
-Table Component
-The Table component provides a customizable table layout for displaying data.
+### 📊 Table Component
 
+Flexible table layouts for displaying structured data.
 
-import React from "react";
+```jsx
 import { Table } from "zoro-ui";
 
-const MyTable = () => {
+const UsersTable = () => {
   const columns = ["Name", "Age", "Location"];
   const data = [
     { name: "John", age: 30, location: "New York" },
     { name: "Jane", age: 28, location: "Los Angeles" },
   ];
 
- // types striped, border, default
-  return <Table columns={columns} data={data}   type="striped" />;
+  return <Table 
+    columns={columns} 
+    data={data} 
+    type="striped" // Options: "striped", "border", "default"
+  />;
 };
+```
 
-export default MyTable;
-Sidebar Component
-The Sidebar component is a collapsible sidebar used for navigation.
+### 📱 Sidebar Component
 
-Basic Usage
-jsx
-Copy
-Edit
-import React, { useState } from "react";
+Collapsible sidebar navigation with smooth transitions.
+
+```jsx
+import { useState } from "react";
 import { Sidebar } from "zoro-ui";
 
-const MyApp = () => {
+const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar}>
-      <p>Content inside the sidebar</p>
+    <Sidebar isOpen={isOpen} toggleSidebar={() => setIsOpen(!isOpen)}>
+      <nav className="p-4">
+        <h2 className="font-bold mb-4">Menu</h2>
+        <ul>
+          <li className="mb-2">Home</li>
+          <li className="mb-2">About</li>
+          <li className="mb-2">Contact</li>
+        </ul>
+      </nav>
     </Sidebar>
   );
 };
+```
 
-export default MyApp;
-Popup Component
-The Popup component allows you to display modals or popups in your application.
+### 💬 Popup Component
 
-import React, { useState } from "react";
-import { Popup } from "zoro-ui";
+Modal dialogs and popup notifications with customizable content.
 
-const MyApp = () => {
+```jsx
+import { useState } from "react";
+import { Button, Popup } from "zoro-ui";
+
+const ConfirmationDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div>
-      <button onClick={togglePopup}>Open Popup</button>
-      <Popup isOpen={isOpen} onClose={togglePopup}>
-        <div className="p-4">This is a popup content</div>
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open Popup</Button>
+      <Popup isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <div className="p-6">
+          <h3 className="text-lg font-bold mb-2">Confirmation</h3>
+          <p className="mb-4">Are you sure you want to proceed?</p>
+          <div className="flex justify-end gap-2">
+            <Button onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button 
+              className="bg-blue-600 text-white"
+              onClick={() => {
+                // Handle confirmation
+                setIsOpen(false);
+              }}
+            >
+              Confirm
+            </Button>
+          </div>
+        </div>
       </Popup>
-    </div>
+    </>
   );
 };
+```
 
-export default MyApp;
-Contributing
-If you'd like to contribute to Zoro UI, feel free to submit a pull request or open an issue in the repository. We welcome any contributions or improvements.
+## 🎭 Theme Customization
 
-License
-Zoro UI is open-source and available under the MIT License. See the LICENSE file for more information.
+Zoro UI components work seamlessly with your tailwind.config.js.
 
-Author
-Zoro UI is created and maintained by Akash Kendre.
+```jsx
+// Example of customizing a Button
+<Button 
+  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium py-2 px-4 rounded-full shadow-lg transition-all duration-300"
+>
+  Gradient Button
+</Button>
+```
 
-vbnet
+## 🛠️ Development
 
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/zoro-ui.git
 
-### How to Use This `README.md`:
+# Install dependencies
+cd zoro-ui
+npm install
 
-1. **Add Sections for Each Component**: I've added detailed usage examples for the **Input**, **Button**, **Dropdown**, **Table**, **Sidebar**, and **Popup** components. You can replicate this structure for all other components in your library.
-2. **Customization**: Users can customize each component using props, such as `className`, `errorMessage`, `placeholder`, `onClick`, etc.
-3. **Installation**: The installation instructions are at the top, guiding users on how to install your pack
+# Start the development server
+npm run dev
+
+# Run tests
+npm test
+
+# Build for production
+npm run build
+```
+
+## 📝 Changelog
+
+### v1.0.0 (Latest)
+- 🎉 Initial release with core components
+- 🌗 Added dark mode support
+- 🌟 Improved accessibility features
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Submit a [pull request](https://github.com/yourusername/zoro-ui/pulls)
+- Report [issues](https://github.com/yourusername/zoro-ui/issues)
+- Suggest new features
+
+## 📄 License
+
+Zoro UI is open-source software licensed under the [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+Created and maintained by Akash Kendre.
+
+---
+
+<div align="center">
+  <p>
+    <a href="https://github.com/yourusername/zoro-ui">GitHub</a> •
+    <a href="https://www.npmjs.com/package/zoro-ui">NPM</a> •
+    <a href="https://twitter.com/yourusername">Twitter</a>
+  </p>
+  <p>⭐ Star us on GitHub if you find Zoro UI helpful! ⭐</p>
+</div>
